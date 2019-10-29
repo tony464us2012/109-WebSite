@@ -96,11 +96,18 @@
 .links .icon {
     display: none;
   }
+  .powered {
+      margin-left: 85%;
+  }
 
   @media screen and (max-width: 1250px){
 .nav-container {
     padding-right: 0;
     }}
+
+    .powered {
+        margin-left: 80%;
+    }
 
   
   @media screen and (max-width: 955px) {
@@ -132,7 +139,6 @@
         height: 5em
     }
     .links {
-        width: 12%;
         padding-top: 2%;
         margin-right: 5%;
         z-index: 999;
@@ -145,7 +151,6 @@
     }
 
     .links ul li {
-        width: 100%;
         padding-right: .2em;
         justify-content: center;
         text-align: center;
@@ -184,7 +189,6 @@
 
   @media (max-width: 820px) {
       .links {
-          width: 15%;
           margin-right: 10%;
       };
       .nav-container {
@@ -198,14 +202,22 @@
 
   @media  (max-width: 700px) {
     .links {
-        width: 25%;
         margin-right: 10%;
     }
-    .restaurant-logo{
-        margin-top: 2%;
+    .links li ul {
+        font-size: .8em;
+    }
+    .spinner{ 
+        margin-left: 45%
+    }
+    .nav-container {
+        padding-top: 3%;
     }
     .restaurant-logo img {
-        width: 90%;
+        width: 100%
+    }
+    .powered {
+        margin-left: 45%;
     }
 }
 
