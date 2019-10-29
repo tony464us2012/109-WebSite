@@ -201,9 +201,11 @@
         width: 25%;
         margin-right: 10%;
     }
+    .restaurant-logo{
+        margin-top: 2%;
+    }
     .restaurant-logo img {
         width: 90%;
-        margin-top: 2%;
     }
 }
 
