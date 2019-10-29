@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) =>  {
     const post = new Post({
         beerName: req.body.beer_name,
-        beerLogo: req.body.beer_label,
+        beerLogo: req.body.beer_label_hd,
         beerABV: req.body.beer_abv,
         beerIBU: req.body.beer_ibu,
         beerStyle: req.body.beer_style,

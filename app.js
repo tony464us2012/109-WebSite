@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //Routes
-app.get('/', async (req, res) => {
+app.get('/main', async (req, res) => {
     try{
     const allPost = await Post.find({beerName: /\w/g });
         res.json(allPost);}
@@ -27,6 +27,13 @@ app.use('/dashboard', verify, postsRoute);
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
 
+// Serve a static assets in production
+if(process.env.NODE_ENV ===  'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html')))
+}
+
+
 // Connect to DB
 mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true } ,()=> console.log('Everything is working fine..'))
 
@@ -34,6 +41,6 @@ mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true } ,()=> conso
 
 // How to start listening to the server
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 4000
 
 app.listen(PORT, console.log(`on port ${PORT}`));
