@@ -3071,11 +3071,11 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/109background.jpg");
-			background-size: auto,								auto,														100% auto;
-			background-position: center,								center,														top center;
-			background-repeat: repeat,								no-repeat,													no-repeat;
-			background-attachment: scroll,								scroll,														scroll;
+			background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../images/beer-tap2.jpg");
+			background-size: auto, contain;
+			background-position: center, center -7%;
+			background-repeat: repeat, no-repeat;
+			background-attachment: scroll, scroll,	scroll;
 			z-index: -1;
 		}
 
