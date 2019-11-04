@@ -3631,8 +3631,12 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
+			#main {
+				width: 100%
+			}
+
 			#main > * {
-				padding: .3rem;
+				padding: .8rem;
 			}
          
 		}
