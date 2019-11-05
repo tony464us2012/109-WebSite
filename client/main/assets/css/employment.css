@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+}
+
+.section-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+}
+
+.file {
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+#form {
+    width: 100%;
+    padding: 2rem;
+    background-color: #f5f5e4;
+    border-radius: 8px
+        
+}
+
+
+#main {
+    padding-top: 3rem
+}
+
+.sec1 ul li {
+    margin-top: -.9rem
+}
+
+
+.sec1 img {
+    width: 45%;
+    margin-left: 17%;
+    margin-bottom: 6%;
+    box-shadow: 4px 4px 15px black
+}
+
+
+.sec1 p {
+    width: 90%;
+    font-family: 'Oranienbaum', serif;
+    font-size: 1.35rem;
+    
+}
+
+.footer h1 {
+    font-size: 6%;
+}
+
+#resume-title {
+    padding: 0;
+    font-size: 2.5rem;
+  font-family: 'Kaushan Script', cursive;
+  border-bottom: 4px solid black;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+    .job {
+        margin-left: 5%;
+        
+    }
+   
+    .sec1 img {
+    width: 55%;
+    margin-left: 16%;
+    margin-top: 8%;
+    box-shadow: 4px 4px 15px black
+}
+    .sec2 {
+        width: 85%;
+        margin-left: 5%;
+    }
+}
+

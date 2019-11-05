@@ -1,0 +1,86 @@
+body {
+    background-image: url(../../Images/background.png);
+    background-size: cover;
+    background-attachment: fixed
+}
+
+.about-content {
+   display: inline-grid
+    flex: 1;
+    padding-left: 9%;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   grid-template-rows: repeat(auto-fill, minmax(300px, 1fr))
+}
+
+.about-content > div {
+    width: 22%;
+    margin-right: 1%;
+}
+
+.about-content > div img {
+    width: 100%;
+}
+
+.about-content > div:first-child, .about-content > div:nth-child(2) {
+margin-top: 3%
+}
+
+.about-content > div:nth-child(3), .about-content > div:nth-child(4) {
+    margin-top: 13.5%;
+}
+
+.about-content > div:nth-child(4) {
+    padding-top: 2.9%
+}
+
+.about-content p {
+    font-size: 1.3em;
+    line-height: 1.1;
+      font-family: Barlow Condensed   
+}
+
+.about-content h1 {
+    font-size: 2.4em;
+    font-family: Teko;
+}
+
+.about-content h2 {
+    margin-top: -2%;
+}
+
+.about-content h3 {
+    margin-top: -2%;
+    margin-bottom: 3%;
+    font-size: 1.45em
+}
+
+.footer {
+    margin-top: 2.4%
+}
+
+@media screen and (max-width: 1250px) {
+    .about-content > div:nth-child(4) {
+        padding-top: 0
+    }
+}
+
+@media screen and (max-width: 955px) {
+    .about-content {
+         padding-left: 4%;
+         display: f
+     }
+    .about-content > div {
+        width: 50%;
+        margin-right: 1%;
+    }
+    .about-content h1 {
+        font-size: 2.8em;
+        font-family: Teko;
+    }
+    .about-content p {
+        font-size: 1.7em;
+        line-height: 1.2;
+          font-family: Barlow Condensed   
+    }
+    
+}
