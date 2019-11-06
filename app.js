@@ -8,11 +8,13 @@ const loginRoute = require('./login_back');
 const registerRoute= require('./register_back');
 const verify = require('./verifyToken')
 const Post = require('./Models/PostModel')
+const path = require('path')
 
 
 app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static('client/build'))
 
 //Routes
 app.get('/main', async (req, res) => {
@@ -29,11 +31,8 @@ app.use('/register', registerRoute);
 
 // Serve a static assets in production
 if(process.env.NODE_ENV ===  'production') {
-    app.use(express.static('client/build'));
-     app.use(express.static('client/main'));
-     app.get('/menu', (req, res) => res.sendFile(path.resolve(_dirname, 'client', 'main', 'employment.html')))
-     app.get('/employment', (req, res) => res.sendFile(path.resolve(_dirname, 'client', 'main', 'employment.html')))
-     app.get('*', (req, res) => res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html')))
+     app.use(express.static('client/build'));
+     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 }
 
 
