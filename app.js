@@ -40,11 +40,11 @@ app.use('/api/register', registerRoute);
 // app.use('/ontap', express.static('client/beer-app/build'))
 // app.get('/tap', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'beer-app', 'build')))
 
-// Serve a static assets in production
-// if(process.env.NODE_ENV ===  'production') {
-//      app.use(express.static('client/build'));
-    //  app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/beer-app/build/index.html')));
-// }
+Serve a static assets in production
+if(process.env.NODE_ENV ===  'production') {
+     app.use(express.static('client/beer-app/build'));
+     app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/beer-app/build/index.html')));
+}
 
 
 // Connect to DB
