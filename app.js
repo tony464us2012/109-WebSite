@@ -42,8 +42,8 @@ app.use('/api/register', registerRoute);
 
 // Serve a static assets in production
 
-     app.use(express.static('client/beer-app/build'));
-     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'beer-app', 'build', 'index.html')));
+     app.use(express.static(path.resolve(__dirname, 'client', 'beer-app', 'build', 'index.html')));
+     app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'beer-app', 'build', 'index.html')));
 
 
 
