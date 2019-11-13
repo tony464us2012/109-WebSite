@@ -14,10 +14,11 @@ const path = require('path')
 app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('client/build'))
+
 
 //Routes
-app.get('/main', async (req, res) => {
+
+app.get('/api/main', async (req, res) => {
     try{
     const allPost = await Post.find({beerName: /\w/g });
         res.json(allPost);}
@@ -25,15 +26,25 @@ app.get('/main', async (req, res) => {
             console.log({message: err})}
 });
 
-app.use('/dashboard', verify, postsRoute);
-app.use('/login', loginRoute);
-app.use('/register', registerRoute);
+// app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'web', 'index.html')))
+
+app.use('/api/dashboard', verify, postsRoute);
+app.use('/api/login', loginRoute);
+app.use('/api/register', registerRoute);
+
+
+// app.use(express.static('client/beer-app/build'));
+// app.get('*', (req, res) => res.sendFile(path.resolve( __dirname, 'client', 'beer-app', 'build', 'index.html')))
+
+// app.get('/main/menu', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'web', 'index.html')));
+// app.use('/ontap', express.static('client/beer-app/build'))
+// app.get('/tap', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'beer-app', 'build')))
 
 // Serve a static assets in production
-if(process.env.NODE_ENV ===  'production') {
-     app.use(express.static('client/build'));
-     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
-}
+// if(process.env.NODE_ENV ===  'production') {
+//      app.use(express.static('client/build'));
+    //  app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/beer-app/build/index.html')));
+// }
 
 
 // Connect to DB
