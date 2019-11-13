@@ -26,21 +26,14 @@ app.get('/api/main', async (req, res) => {
             console.log({message: err})}
 });
 
-// app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'web', 'index.html')))
+
 
 app.use('/api/dashboard', verify, postsRoute);
 app.use('/api/login', loginRoute);
 app.use('/api/register', registerRoute);
 
 
-// app.use(express.static('client/beer-app/build'));
-// app.get('*', (req, res) => res.sendFile(path.resolve( __dirname, 'client', 'beer-app', 'build', 'index.html')))
 
-// app.get('/main/menu', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'web', 'index.html')));
-// app.use('/ontap', express.static('client/beer-app/build'))
-// app.get('/tap', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'beer-app', 'build')))
-
-// Serve a static assets in production
 
      app.use(express.static(path.resolve(__dirname, 'client', 'build')));
      app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
