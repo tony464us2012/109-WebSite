@@ -4323,3 +4323,9 @@ input, select, textarea {
 		}
 
 	}
+
+	@media (max-width:550px) {
+		.section p {
+			text-align: center
+		}
+	}
