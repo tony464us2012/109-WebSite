@@ -3109,13 +3109,20 @@ input, select, textarea {
 			opacity: 1;
 		}
 
-		@media screen and (orientation: portrait) {
-
+		@media (max-width: 768px) {
 			#wrapper > .bg {
-				background-size: auto,								auto,														auto 175%;
+				background-size: auto, auto;
 			}
-
 		}
+
+		@media (max-width: 425px) {
+			#wrapper > .bg {
+				background-size: auto, contain;
+			}
+		}
+	
+
+		
 
 /* Intro */
 
