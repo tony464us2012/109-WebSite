@@ -9,6 +9,10 @@ const registerRoute= require('./register_back');
 const verify = require('./verifyToken')
 const Post = require('./Models/PostModel')
 const path = require('path')
+const connectDB = require('./config/db')
+
+//Connect to DB
+connectDB();
 
 
 app.use(cors())
@@ -35,15 +39,10 @@ app.use('/api/register', registerRoute);
 
 
 
-     app.use(express.static(path.resolve(__dirname, 'client', 'build')));
-     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
-
-
-
-// Connect to DB
-mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true } ,()=> console.log('Everything is working fine..'))
-
-
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')))
+}
 
 // How to start listening to the server
 

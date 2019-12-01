@@ -1,8 +1,9 @@
-const router = require('express').Router()
-const Registered = require('./Models/RegisterModel')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-const { check, validationResult } = require('express-validator')
+const router = require('express').Router();
+const Registered = require('./Models/RegisterModel');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { check, validationResult } = require('express-validator');
+const config = require('config');
 
 router.post('/', [
     check('email').isEmail(),
@@ -28,9 +29,8 @@ router.post('/', [
     });
     try{
     const savedUser = await user.save();
-    const token = jwt.sign({_id: savedUser._id}, process.env.TOKEN_SECRET);
+    const token = jwt.sign({_id: savedUser._id}, config.get('TOKEN_SECRET'));
     res.send(token);
-    req.get('auth_token');
    }catch (err)  {
        res.status(400).send(err)
    };

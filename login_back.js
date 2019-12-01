@@ -1,8 +1,9 @@
-const router = require('express').Router()
-const Registered = require('./Models/RegisterModel')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-const { check, validationResult } = require('express-validator')
+const router = require('express').Router();
+const Registered = require('./Models/RegisterModel');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { check, validationResult } = require('express-validator');
+const config = require('config');
 
 router.post('/', [
   check('email').isEmail(),
@@ -22,9 +23,8 @@ router.post('/', [
      const validPass = await bcrypt.compare(password, user.password);
      if(!validPass) return res.status(400).send('Invalid Password');
     
-     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+     const token = jwt.sign({_id: user._id}, config.get('TOKEN_SECRET'));
      res.send(token);
-     req.get('auth_token');
     }
      catch (err) {console.log(err)}
       })
