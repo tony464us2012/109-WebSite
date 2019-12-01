@@ -1,0 +1,196 @@
+.beer-section {
+  border: 4px solid white;
+  margin: 2%;
+  border-radius: 12px;
+  padding: 4%,
+}
+
+.beer-section1{
+  background-color: rgba(148, 177, 212, 0.61);
+  padding: 5%;
+  position: relative
+}
+  
+  .beer-section h1, .display-section h1 {
+    font-family: Consolas;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    line-height: 90%;
+    font-size: 1.6em;
+  }
+
+  
+p {
+    margin-top: -2%;
+    margin-bottom: 0;
+    font-size: 100%;
+  }
+
+  .details  {
+    margin-top: 4%;
+  }
+
+  .details1 h1 {
+    font-size: 140%;
+  }
+
+  .details1 h3 {
+    font-size: 100%;
+  }
+
+  .details1 p {
+    font-size: 90%
+  }
+
+  .bottom1 p {
+    font-size: 90%;
+
+  }
+  
+  h3 {
+    color: rgb(214, 167, 78);
+    margin-top: 2%;
+    line-height: 90%;
+    font-size: 2rem;
+    margin-bottom: 4%;
+  }
+  
+  .bottom {
+    display: flex;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .bottom > p {
+  text-align: center;
+  margin-right: 2%;
+  }
+
+  .bottom1 p {
+    color: white
+  }
+  
+  .logo-cont {
+    width: 100px;
+    margin: 1% 1% 0 1%;
+  }
+  
+  .logo-cont1 {
+    width: 100px;
+    margin-bottom: 4%;
+ margin-left: 24%;
+  }
+  
+  .logo-cont > img {
+    width: 100%;
+  }
+  
+  .logo-cont1 > img {
+    width: 100%;
+  }
+
+  .beerInput {
+    display: flex;
+    margin-top: 2%
+  }
+
+  .beerInput button {
+    width: 40%;
+    font-size: 80%;
+    padding: 2%;
+    margin-left: 2%;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    font-size: 80%;
+    border: 1px solid black;
+    height: 100%;
+    border-radius: 5px;
+    padding-left: 2%;
+  }
+ 
+  .dashtap {
+    position: absolute;
+     display: block;
+   width: 35px;
+      height: 35px;
+      background-color: rgb(233, 236, 234);
+      border-radius: 50%;
+      text-align: center;
+      color: black;
+      padding: .5em .3em;
+      margin-left: 75%;
+      margin-top: 2%;
+ }
+
+ .dashtap p {
+  margin-top: -.3em;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center
+ }
+
+ .searchTitle {
+   font-weight: 400;
+   color: brown;
+   text-align: center;
+   font-size: 2.5rem
+  }
+
+  .remove-btn {
+    margin-top: 1%
+  }
+
+ @media (max-width:600px) {
+    .beer-section1 {
+      padding: 7%;
+    }
+    .details1 {
+      font-size: 120%;
+    }
+    .details1 p {
+      font-size: 75%;
+    }
+    .bottom1 p {
+      font-size: 90%;
+    }
+    .remove-btn {
+      width: 50%;
+    }
+    .beer-section1:last-child {
+      margin-bottom : 10%;
+    }
+
+ }
+
+ @media (max-width:500px) {
+  .beer-section1 {
+    padding: 2%;
+    border: 3px solid white;
+  }
+
+  .details1 {
+    font-size: 120%;
+  }
+  .details1 p {
+    font-size: 85%;
+  }
+  
+  .bottom1 p {
+    font-size: 100%;
+  }
+  .remove-btn {
+    width: 38%;
+  }
+ }
+
+ @media (max-width: 350px) {
+  
+  .details1 {
+    font-size: 110%;
+  }
+  .bottom1 p {
+    font-size: 90%;
+  }
+ }

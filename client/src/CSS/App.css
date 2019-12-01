@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.displayDash {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+   padding: 3%;
+   z-index: -9999
+}
+
+
+
+
+
