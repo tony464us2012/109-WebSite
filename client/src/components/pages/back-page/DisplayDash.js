@@ -5,8 +5,8 @@ import setAuthToken from '../../utils/setAuthToken'
 
 const DisplayDash = () => {
 
-  if (localStorage.auth_token) {
-    setAuthToken(localStorage.auth_token)
+  if (localStorage.token) {
+    setAuthToken(localStorage.token)
   }
 
     const beerContext = useContext(BeerContext);

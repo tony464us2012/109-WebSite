@@ -13,7 +13,7 @@ export default (state, action) => {
                 localStorage.setItem('token', action.payload)
                 return {
                     ...state, 
-                    ...action.payload,
+                    token: action.payload,
                     isAuthenticated: true                
                 };
         case REGISTER_FAIL: 

@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv/config');
 const postsRoute = require('./post');
@@ -32,7 +31,7 @@ app.get('/api/main', async (req, res) => {
 
 
 
-app.use('/api/dashboard', verify, postsRoute);
+app.use('/api/dashboard', postsRoute);
 app.use('/api/login', loginRoute);
 app.use('/api/register', registerRoute);
 

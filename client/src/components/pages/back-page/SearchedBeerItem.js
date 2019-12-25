@@ -45,7 +45,7 @@ SearchedBeerItem.propTypes = {
     abv: PropTypes.number.isRequired,
     ibu: PropTypes.number.isRequired,
     style: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     id: PropTypes.number.isRequired
     }
 

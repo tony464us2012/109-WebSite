@@ -30,7 +30,9 @@ router.post('/', async (req, res) =>  {
         if(repeatedTap) {
         const newPostList = await Post.deleteOne({tap: req.body.tap });
         };
-        const savedPost = await post.save()
+        const savedPost = await post.save();
+        const allPost = await Post.find({beerName: /\w/g });
+        res.json(allPost);
     }  catch (err) {
     console.log(err)
     }});
@@ -39,11 +41,10 @@ router.post('/', async (req, res) =>  {
         try {
             const id = req.body.userid;
         const newPostList = await Post.deleteOne({_id: id });
-        res.json(newPostList)
         }catch (err) {
             console.log(err)
         }
-    });
+    })
 
 
 

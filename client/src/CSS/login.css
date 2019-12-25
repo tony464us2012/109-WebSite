@@ -19,17 +19,12 @@
     margin-bottom: 5%;
     max-width: 24em;
     width: 90%;
-    background-color: #b7b7c4;
-    box-shadow: 2px 3px 16px black;
-    border-radius: 20px
   }
    
  
   
   .login__header {
-    background-color: #b7b7c4;
-    border-top-left-radius: 0.25em;
-    border-top-right-radius: 0.25em;
+    background-color: green;
     color:#fff;
     padding: 1.5em;
     text-align: center;
@@ -43,16 +38,17 @@
   }
   
   .login__body {
-    background-color:  #b7b7c4;
+    background-color:  green;
     padding: 2.5em;
     position: relative;
     border-top: 5px solid white;
 
   } 
   
-  .login__footer p {
-    margin: 0;
-  }
+ #input {
+   background-color: white;
+   margin-top: 1.5rem
+ }
 
   .fieldinput {
     margin-bottom: 5%

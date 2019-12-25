@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
 import AuthContext from '../context/auth/authContext'
-import Logo from '../../Images/logo-01.png'
 
 
 
@@ -36,7 +35,7 @@ const Register = (props) => {
     <div className="grid">
       <form  className="form login"  onSubmit={onSubmit}>
         <header className="login__header">
-          <img src={Logo} alt='logo' style={{width: '40%', height: '100px'}}/>
+        <h3 style={{ color: 'black', fontSize: '2.5rem'}}>Register</h3>
         </header>
         <div className="login__body">
           <div className="form__field">
@@ -52,7 +51,7 @@ const Register = (props) => {
             <input type= "password" name="password" value={password} onChange={onChange} />
           </div>
           <div className="login__footer">
-            <input type="submit" value="Register" />
+            <input id="input" type="submit" value="Register" />
           </div>
         </div>
       </form>

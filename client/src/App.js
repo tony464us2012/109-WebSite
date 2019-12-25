@@ -11,8 +11,8 @@ import setAuthToken from './components/utils/setAuthToken'
 import './CSS/App.css';
 import './CSS/displayDashBeer.css'
 
-if (localStorage.auth_token) {
-  setAuthToken(localStorage.auth_token)
+if (localStorage.token) {
+  setAuthToken(localStorage.token)
 }
 
 function App() {

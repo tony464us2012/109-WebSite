@@ -43,19 +43,20 @@ const BeerState = props => {
             }
       
     //Search Beer Info
-      const searchBeerInfo = async (id, tap) => {
+      const searchBeerInfo = async (bid, tap) => {
         const config = {
             headers: {
               'Content-Type': 'application/json'
             }};
             
             try {
-                const response = await fetch(`https://api.untappd.com/v4/beer/info/${id}?client_id=41EF786235D5A6E859C26C7DABA2048BB19344D0&client_secret=2C5E752380284C4A141AD1066C8E688BF0A299F9`);
+                const response = await fetch(`https://api.untappd.com/v4/beer/info/${bid}?client_id=41EF786235D5A6E859C26C7DABA2048BB19344D0&client_secret=2C5E752380284C4A141AD1066C8E688BF0A299F9`);
                 const data = await response.json();
                 const beerObject = data.response.beer;
                 beerObject.tap = Number(tap);
                 //eslint-disable-next-line
                 const res = await axios.post('/api/dashboard', beerObject, config);
+                dispatch({ type: ADD_TAP, payload: {bid, post: res.data} })
             } catch (err) {
                 console.log(err)
             }}         
@@ -63,7 +64,6 @@ const BeerState = props => {
      //Add Tap
         const addTap = (bid, tap) => { 
              if(Number(tap) !== 0 && Number(tap) <= 22 ) {
-                dispatch({ type: ADD_TAP, payload: bid});
                 searchBeerInfo(bid, tap)
             } else {
                 console.log('Please enter a valid tap number')
@@ -71,11 +71,12 @@ const BeerState = props => {
          }
 
      //Remove Beer
-     const removeBeer = async id => {
+     const removeBeer = async (id, tap) => {
         
          try{
+             // eslint-disable-next-line
             const res = await axios.delete('/api/dashboard', {data: {userid: id}});
-            dispatch({ type: REMOVE_BEER, payload: res.data })
+            dispatch({ type: REMOVE_BEER, payload: tap})
             } catch (err){
             console.log(err)
               }

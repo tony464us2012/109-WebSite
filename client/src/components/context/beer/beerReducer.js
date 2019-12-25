@@ -8,7 +8,6 @@ import {
 export default (state, action) => {
     switch(action.type) {
         case SET_MAIN_BEERS:
-        case REMOVE_BEER:
             return {
                 ...state,
                 displayBeers: action.payload
@@ -21,7 +20,13 @@ export default (state, action) => {
         case ADD_TAP:
             return {
                 ...state,
-                searchedBeers: state.searchedBeers.filter(x => x.beer.bid !== action.payload)
+                displayBeers: action.payload.post,
+                searchedBeers: state.searchedBeers.filter(x => x.beer.bid !== action.payload.bid)
+            };
+        case REMOVE_BEER:
+            return {
+                ...state,
+                displayBeers: state.displayBeers.filter(x => x.tap !== action.payload)
             }
         default:
             return state
