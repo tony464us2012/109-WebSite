@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import '../../CSS/login.css';
-import Logo from '../../Images/logo-01.png';
 import AuthContext from '../context/auth/authContext';
 import BeerContext from '../context/beer/beerContext';
 
@@ -58,9 +57,7 @@ import BeerContext from '../context/beer/beerContext';
                     <input className="fieldinput" type= "password" name="password" value={password} onChange={onChange} />
                 </div>
 
-    {/* <div className="login__footer"> */}
       <input id="input" type="submit" value="Login" />
-    {/* </div> */}
     </div>
 
   </form>

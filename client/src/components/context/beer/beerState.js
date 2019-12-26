@@ -72,11 +72,10 @@ const BeerState = props => {
 
      //Remove Beer
      const removeBeer = async (id, tap) => {
-        
+                console.log(tap)
          try{
-             // eslint-disable-next-line
+             dispatch({ type: REMOVE_BEER, payload: tap})
             const res = await axios.delete('/api/dashboard', {data: {userid: id}});
-            dispatch({ type: REMOVE_BEER, payload: tap})
             } catch (err){
             console.log(err)
               }
