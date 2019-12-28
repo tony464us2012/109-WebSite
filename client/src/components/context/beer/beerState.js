@@ -56,7 +56,7 @@ const BeerState = props => {
                 beerObject.tap = Number(tap);
                 //eslint-disable-next-line
                 const res = await axios.post('/api/dashboard', beerObject, config);
-                dispatch({ type: ADD_TAP, payload: {bid, post: res.data} })
+                dispatch({ type: SET_MAIN_BEERS, payload: res.data})
             } catch (err) {
                 console.log(err)
             }}         
@@ -64,6 +64,7 @@ const BeerState = props => {
      //Add Tap
         const addTap = (bid, tap) => { 
              if(Number(tap) !== 0 && Number(tap) <= 22 ) {
+                 dispatch({ type: ADD_TAP, payload: bid})
                 searchBeerInfo(bid, tap)
             } else {
                 console.log('Please enter a valid tap number')

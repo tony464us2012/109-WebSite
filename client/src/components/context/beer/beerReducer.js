@@ -20,8 +20,7 @@ export default (state, action) => {
         case ADD_TAP:
             return {
                 ...state,
-                displayBeers: action.payload.post,
-                searchedBeers: state.searchedBeers.filter(x => x.beer.bid !== action.payload.bid)
+                searchedBeers: state.searchedBeers.filter(x => x.beer.bid !== action.payload)
             };
         case REMOVE_BEER:
             return {
