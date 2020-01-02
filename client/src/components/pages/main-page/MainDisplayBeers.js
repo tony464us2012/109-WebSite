@@ -17,10 +17,9 @@ const MainDisplayBeers = ({ name, logo, abv, ibu, beerstyle, brewery, ratingCoun
     return (
     <Fragment>
         <div className="main-section">
-            <div className="tap"><p>TAP</p><p>{tap}</p></div>
-            <div className="logo-container">
+            { logo ?  <div className="logo-container">
                 <img src= {logo} alt="logo" />
-            </div>
+            </div> : ''}
             <div className="main-details">
                 <h1>{name}</h1>
                 <h3>{brewery}</h3>
@@ -52,7 +51,6 @@ const MainDisplayBeers = ({ name, logo, abv, ibu, beerstyle, brewery, ratingCoun
     ratingCount: PropTypes.number.isRequired,
     ratingScore: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
-    tap: PropTypes.number.isRequired
     }
 
     export default MainDisplayBeers

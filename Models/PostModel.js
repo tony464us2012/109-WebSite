@@ -7,8 +7,7 @@ const PostSchema = mongoose.Schema({
         required: true
     },
     beerLogo: {
-        type: String, 
-        required: true
+        type: String
     },
     beerABV: {
         type: Number, 
@@ -36,10 +35,6 @@ const PostSchema = mongoose.Schema({
     },
     description: {
         type: String
-    },
-    tap: {
-        type: Number,
-        required: true
     }
    
 })

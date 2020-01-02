@@ -25,7 +25,7 @@ export default (state, action) => {
         case REMOVE_BEER:
             return {
                 ...state,
-                displayBeers: state.displayBeers.filter(x => x.tap !== action.payload)
+                displayBeers: state.displayBeers.filter(x => x._id !== action.payload)
             }
         default:
             return state

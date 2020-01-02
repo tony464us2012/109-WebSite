@@ -5,17 +5,16 @@ import '../../../CSS/displayDashBeer.css'
 
 
 
-const DisplayDashBeer = ({name, logo, abv, ibu, beerstyle, brewery, ratingCount, ratingScore, tap, id}) => {
+const DisplayDashBeer = ({name, logo, abv, ibu, beerstyle, brewery, ratingCount, ratingScore, id}) => {
   
     const beerContext = useContext(BeerContext);
     const { removeBeer } = beerContext
 
     return (
         <div className="beer-section beer-section1">
-            <div className="dashtap"><p>{ tap }</p></div>
-            <div className="logo-cont1" >
+            { logo ? <div className="logo-cont1" >
                 <img src= { logo } alt="logo" />
-            </div>
+            </div> : ''}
             <div className="details details1">
                 <h1>{ name }</h1>
                 <h3>{ brewery }</h3>
@@ -27,7 +26,7 @@ const DisplayDashBeer = ({name, logo, abv, ibu, beerstyle, brewery, ratingCount,
                 <p>{ ratingCount } <br/>Rating Count</p>
                 <p>{ ratingScore.toPrecision(2) }/4 <br/>Rating Score</p>
             </div>
-            <button type="button" className="remove-btn btn btn-danger" onClick={()=> {removeBeer(id, tap)}}>Remove</button>
+            <button type="button" className="remove-btn btn btn-danger" onClick={()=> {removeBeer(id)}}>Remove</button>
         </div>
         )
     }
@@ -42,7 +41,6 @@ const DisplayDashBeer = ({name, logo, abv, ibu, beerstyle, brewery, ratingCount,
         ratingCount: PropTypes.number.isRequired,
         ratingScore: PropTypes.number.isRequired,
         id: PropTypes.string.isRequired,
-        tap: PropTypes.number.isRequired
         }
 
     export default DisplayDashBeer

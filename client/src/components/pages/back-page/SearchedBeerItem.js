@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import BeerContext from '../../context/beer/beerContext'
 
@@ -7,11 +7,6 @@ const SearchedBeerItem = ({ name, company, abv, ibu, style, img, id }) => {
     const beerContext = useContext(BeerContext);
     const { addTap } = beerContext;
 
-    const[tap, setTap] = useState('');
-
-    const onChange = (e) => {
-            setTap(e.target.value)
-    }  
     
     return(
         <div>
@@ -28,11 +23,8 @@ const SearchedBeerItem = ({ name, company, abv, ibu, style, img, id }) => {
                     <p>{ abv }<br/> ABV</p>
                     <p>{ ibu } <br/> IBU</p>
                 </div>
-                <div className="beerInput">
-                    <div className="tap_number">
-                        <input style={{ width: '50px' }} type="number" min="1" value={tap} max="22" placeholder="Tap #" onChange={onChange} required/>
-                    </div>         
-                    <button type="button" style={{ width:'auto' }} className="btn btn-success" onClick={() => { addTap(id, tap); setTap('') }}>Add To Tap</button>
+                <div className="beerInput">         
+                    <button type="button" style={{ width:'auto' }} className="btn btn-success" onClick={() =>  addTap(id)}>Add To Tap</button>
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ const MainDisplay = props => {
         <button className="btn dashboard dashboard-btn" onClick={()=> { props.history.push('./login')}}>Dashboard <i className="fas fa-cog"></i></button>
         <h1 className="main-title">ON TAP NOW</h1>
         <div className='main-cont'>
-                {!displayBeers.length? <Spinner />: displayBeers.sort((a, b) => a.tap - b.tap).map((x) =>  <MainDisplayBeers 
+                {!displayBeers.length? <Spinner />: displayBeers.sort((a, b) => a.beerName > b.beerName ? 1 : -1).map((x) =>  <MainDisplayBeers 
                 name={x.beerName} 
                 logo={x.beerLogo} 
                 abv={x.beerABV}

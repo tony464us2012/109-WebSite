@@ -21,17 +21,16 @@ router.post('/', async (req, res) =>  {
         brewery: req.body.brewery.brewery_name,
         ratingCount: req.body.rating_count,
         ratingScore: req.body.rating_score,
-        description: req.body.beer_description,
-        tap: req.body.tap
+        description: req.body.beer_description
     });
 
     try{
-        const repeatedTap = await Post.find({tap: req.body.tap });
+        const repeatedTap = await Post.find({ beerName: req.body.beerName });
         if(repeatedTap) {
-        const newPostList = await Post.deleteOne({tap: req.body.tap });
+         await Post.deleteOne({ beerName: req.body.Name });
         };
-        const savedPost = await post.save();
-        const allPost = await Post.find({beerName: /\w/g });
+        await post.save();
+        const allPost = await Post.find({ beerName: /\w/g });
         res.json(allPost);
     }  catch (err) {
     console.log(err)
@@ -40,7 +39,7 @@ router.post('/', async (req, res) =>  {
     router.delete('/', async (req, res) => {
         try {
             const id = req.body.userid;
-        const newPostList = await Post.deleteOne({_id: id });
+        await Post.deleteOne({_id: id });
         }catch (err) {
             console.log(err)
         }

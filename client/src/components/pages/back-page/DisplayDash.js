@@ -14,7 +14,7 @@ const DisplayDash = () => {
 
     return (
         <div className="displayDash">
-            {displayBeers.sort((a, b) => a.tap - b.tap).map((x, index) => <DisplayDashBeer 
+            {displayBeers.sort((a, b) => a.beerName > b.beerName ? 1 : -1).map((x, index) => <DisplayDashBeer 
             name={x.beerName} 
             logo={x.beerLogo} 
             abv={x.beerABV}
@@ -25,7 +25,7 @@ const DisplayDash = () => {
             ratingScore={x.ratingScore}
             key={index} 
             id={x._id}
-            tap={x.tap}/>)}
+            />)}
         </div>
     )
 }
