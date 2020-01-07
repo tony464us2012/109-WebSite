@@ -5,16 +5,20 @@ import '../../../CSS/displayDashBeer.css'
 
 
 
-const DisplayDashBeer = ({name, logo, abv, ibu, beerstyle, brewery, ratingCount, ratingScore, id}) => {
+const DisplayDashBeer = ({name, logo, abv, ibu, beerstyle, brewery, ratingCount, ratingScore, id, logo2}) => {
   
     const beerContext = useContext(BeerContext);
     const { removeBeer } = beerContext
 
     return (
         <div className="beer-section beer-section1">
-            { logo ? <div className="logo-cont1" >
-                <img src= { logo } alt="logo" />
-            </div> : ''}
+            { logo ?  <div className="logo-container">
+                <img src= {logo} alt='beer-logo' />
+            </div> : 
+            <div className="logo-container">
+            <img src= {logo2} alt='beer-logo' />
+        </div>
+            }
             <div className="details details1">
                 <h1>{ name }</h1>
                 <h3>{ brewery }</h3>

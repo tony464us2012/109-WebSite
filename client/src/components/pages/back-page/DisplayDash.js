@@ -25,6 +25,7 @@ const DisplayDash = () => {
             ratingScore={x.ratingScore}
             key={index} 
             id={x._id}
+            logo2={x.beerLogo2}
             />)}
         </div>
     )

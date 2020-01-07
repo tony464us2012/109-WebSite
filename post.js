@@ -21,7 +21,8 @@ router.post('/', async (req, res) =>  {
         brewery: req.body.brewery.brewery_name,
         ratingCount: req.body.rating_count,
         ratingScore: req.body.rating_score,
-        description: req.body.beer_description
+        description: req.body.beer_description,
+        beerLogo2: req.body.beer_label
     });
 
     try{

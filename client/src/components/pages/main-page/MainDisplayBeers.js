@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../../../CSS/MainDisplay.css';
 
 
-const MainDisplayBeers = ({ name, logo, abv, ibu, beerstyle, brewery, ratingCount, ratingScore, description, tap }) => {
+const MainDisplayBeers = ({ name, logo, abv, ibu, beerstyle, brewery, ratingCount, ratingScore, description, logo2 }) => {
     
     const [readMore, setReadMore] = useState(true)
 
@@ -18,8 +18,12 @@ const MainDisplayBeers = ({ name, logo, abv, ibu, beerstyle, brewery, ratingCoun
     <Fragment>
         <div className="main-section">
             { logo ?  <div className="logo-container">
-                <img src= {logo} alt="logo" />
-            </div> : ''}
+                <img src= {logo} alt='beer-logo' />
+            </div> : 
+            <div className="logo-container">
+            <img src= {logo2} alt='beer-logo' />
+        </div>
+            }
             <div className="main-details">
                 <h1>{name}</h1>
                 <h3>{brewery}</h3>

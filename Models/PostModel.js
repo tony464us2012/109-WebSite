@@ -35,6 +35,9 @@ const PostSchema = mongoose.Schema({
     },
     description: {
         type: String
+    },
+    beerLogo2: {
+        type: String
     }
    
 })

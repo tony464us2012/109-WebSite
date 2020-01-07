@@ -30,7 +30,7 @@ const MainDisplay = props => {
                 ratingScore={x.ratingScore}
                 description={x.description}
                 key={x._id} 
-                tap={x.tap}
+                logo2={x.beerLogo2}
                 />)}
         </div>
     </Fragment>
