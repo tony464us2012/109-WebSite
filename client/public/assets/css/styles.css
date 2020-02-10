@@ -1,0 +1,48 @@
+
+.section h1 {
+    font-size: 2rem !important
+}
+.section p {
+    font-size: .9rem !important;
+    margin-bottom: .5rem !important;
+    text-align: center
+}
+.section p span {
+    font-weight: bold !important;
+}
+.copyright {
+    padding-top: 4%
+}
+.copyright ul {
+    display: flex; 
+    list-style: none; 
+    text-decoration: none; 
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    #wrapper>.bg {
+        background-size: contain;
+        background-position: 50% 50%;
+        background-color: black;
+    }
+    #main, nav {
+        width: 90% !important
+    }
+
+}
+@media (max-width: 768px) {
+    #footer .section {
+        border-bottom: 2px solid #e2e2e2
+    }
+}
+@media (min-width: 768px) {
+    #wrapper>.bg {
+        background-size: cover;
+        background-position: 50% -2rem
+    }
+}
+@media (max-width: 375px) {
+    #wrapper>.bg {
+    }
+}
