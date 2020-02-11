@@ -38,11 +38,7 @@
 }
 @media (min-width: 768px) {
     #wrapper>.bg {
-        background-size: cover;
-        background-position: 50% -2rem
+        background-position: 50% -4rem
     }
 }
-@media (max-width: 375px) {
-    #wrapper>.bg {
-    }
-}
+
