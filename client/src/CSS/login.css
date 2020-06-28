@@ -24,10 +24,11 @@
  
   
   .login__header {
-    background-color: green;
+    background-color: grey;
     color:#fff;
     padding: 1.5em;
     text-align: center;
+    border-radius: 10px 10px 0 0;
    
   }
   
@@ -38,7 +39,7 @@
   }
   
   .login__body {
-    background-color:  green;
+    background-color:  grey;
     padding: 2.5em;
     position: relative;
     border-top: 5px solid white;
