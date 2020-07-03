@@ -6,7 +6,10 @@ import {
    SET_MAIN_BEERS,
    SET_SEARCHED_BEERS,
    ADD_TAP,
-   REMOVE_BEER
+   REMOVE_BEER,
+   SET_MAIN_BOTTLES,
+   ADD_BOTTLE,
+   REMOVE_BOTTLE
 } from '../types'
 
 const BeerState = props => {
@@ -14,7 +17,8 @@ const BeerState = props => {
     const initialState = {
         displayBeers: [],
         searchedBeers: [],
-        searchedBeerInfo: []
+        searchedBeerInfo: [],
+        bottleBeer:[]
 };
 
     const [state, dispatch] = useReducer(beerReducer, initialState);
@@ -23,7 +27,7 @@ const BeerState = props => {
     //Fetch Main Beers
         const getMainBeers = async () => {
             try{
-                const res = await axios.get('/api/main');
+                const res = await axios.get('/api/dashboard');
                 dispatch({ type: SET_MAIN_BEERS, payload: res.data});
             }
             catch(err) {
@@ -76,15 +80,57 @@ const BeerState = props => {
               }
             }
 
+    //Get Bottle
+
+            const getMainBottles = async () => {
+                try{
+                    const res = await axios.get('/api/bottle');
+                    dispatch({ type: SET_MAIN_BOTTLES, payload: res.data});
+                }
+                catch(err) {
+                console.log(err)
+        }};
+
+    //Add Bottle
+
+            const addBottle = async (bottle) => {
+                const config = {
+                    headers: {
+                      'Content-Type': 'application/json'
+                    }};
+                    try {
+                        const res = await axios.post('/api/bottle', bottle, config);
+                        dispatch({ type: ADD_BOTTLE, payload: res.data});
+                        console.log(res.data)
+                    } catch (err) {
+                        console.log(err)
+                    }
+            }
+    
+    //Remove Bottle
+
+            const removeBottle = async (id) => {
+            try{
+            dispatch({ type: REMOVE_BOTTLE, payload: id});
+           await axios.delete('/api/bottle', {data: {userid: id}});
+           } catch (err){
+           console.log(err)
+             }
+           }
+
+
 return (
     <BeerContext.Provider
      value={{
         displayBeers: state.displayBeers,
         searchedBeers: state.searchedBeers,
+        bottleBeer: state.bottleBeer,
         getMainBeers,
         searchBeer,
         addTap,
-        removeBeer
+        removeBottle,
+        getMainBottles,
+        addBottle
     }}>
         {props.children}
     </BeerContext.Provider>

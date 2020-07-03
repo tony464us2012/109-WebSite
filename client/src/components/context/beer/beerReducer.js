@@ -2,7 +2,10 @@ import {
     SET_MAIN_BEERS,
     SET_SEARCHED_BEERS,
     ADD_TAP,
-    REMOVE_BEER
+    REMOVE_BEER,
+    SET_MAIN_BOTTLES,
+    ADD_BOTTLE,
+    REMOVE_BOTTLE
 } from '../types'
 
 export default (state, action) => {
@@ -27,6 +30,17 @@ export default (state, action) => {
                 ...state,
                 displayBeers: state.displayBeers.filter(x => x._id !== action.payload)
             }
+        case SET_MAIN_BOTTLES: 
+        case ADD_BOTTLE:
+            return {
+                ...state,
+                bottleBeer: action.payload
+            }
+        case REMOVE_BOTTLE:
+            return {
+                    ...state,
+                    bottleBeer: state.bottleBeer.filter(x => x._id !== action.payload)
+                }
         default:
             return state
     }

@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import BeerContext from '../../context/beer/beerContext';
 import SearchedBeerItem from './SearchedBeerItem';
+import BottleBeer from './BottleBeer';
 import Search from '../../layout/Searchbeer';
-import Header from '../../layout/Header';
+import AddBottle from '../../layout/AddBottle';
 import DisplayDash from './DisplayDash';
 import setAuthToken from '../../utils/setAuthToken';
-import Title from '../../layout/Title';
-import SVG from '../../layout/waves';
+import AuthContext from '../../context/auth/authContext';
 import '../../../CSS/dashboard.css'
+import BottleItem from './BottleItem';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token)
@@ -15,23 +16,25 @@ if (localStorage.token) {
 
 const Dashboard = () => {
 
+  const authContext = useContext(AuthContext);
+  const { logout } = authContext
   const beerContext = useContext(BeerContext);
   const { searchedBeers } = beerContext;
 
+
+
+ 
+
 return (
     <div className="dashboard1">
-      <Title />
-      <div className="header">
-        <div className="inner-header">
-          <div className="beerTap"></div>
-          <DisplayDash />
-        </div>
-        <div>
-          <SVG />
-        </div>
-      </div>
+      <button type="button" className="btn btn-warning logout" onClick={ logout }>Logout</button>   
+      <h1 className="dashboard-title">Beers on Tap</h1>
+      <DisplayDash />
+      <h1 className="dashboard-title">Beers on Bottles</h1>
+      <BottleBeer />
+      <AddBottle />
       <div className="dashboard-container">
-        <Header /> 
+      <h2 className="searchTitle" style={{fontSize:'2.5rem'}}>Search The Beers</h2>
         <Search />
             <div className='searchedBeerItems'>
               { searchedBeers.map((x, index) => <SearchedBeerItem 

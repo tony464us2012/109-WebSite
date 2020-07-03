@@ -4,7 +4,6 @@
     position: relative; 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    /* grid-template-rows: repeat(auto-fill, minmax(250px, 1fr)); */
     grid-gap: 25px;
     margin-top: 2.5rem
   }
@@ -14,15 +13,9 @@
     background:  linear-gradient(90deg, rgba(229,235,242,1) 0%, rgba(255,255,255,1) 24%, rgba(250,250,250,1) 74%, rgba(229,235,242,1) 100%);
     box-shadow: 3px 3px 10px black ;
     border-radius: 2px;
+    opacity: .93;
 }
-.main-title, .dashboard-title {
-  font-size: 2.5rem;
-  font-family: 'Kaushan Script', cursive;
-  border: 4px solid black;
-  margin-top:-1rem;
-  margin-bottom: 1.25rem;
-  text-align: center
-}
+
   .logo-container {
       width: 40%;
       max-height: 50%;
@@ -110,8 +103,19 @@
   }
 
   .dashboard-btn {
+    margin-top: 2rem;
     margin-bottom: 2rem;
   }
+ .btn-container {
+   display: flex;
+  justify-content: space-evenly;
+ }
+ .btn-container button {
+   width: 12rem;
+   font-size: 1.1rem;
+   font-weight: 500;
+   border: 1px solid grey
+ }
 
   @media (min-width: 1800px) {
     .main-cont {

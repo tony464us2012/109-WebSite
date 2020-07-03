@@ -1,5 +1,5 @@
 const express = require('express')
-const Post = require('./Models/PostModel')
+const Post = require('../Models/PostModel')
 const router = express.Router()
 
 router.get('/', async (req, res) => {

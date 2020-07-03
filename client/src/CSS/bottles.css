@@ -1,0 +1,63 @@
+.bottle-title {
+    font-size: 2rem;
+    font-family: cursive;
+    align-items: center;
+}
+.bottle-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    padding: 1.5rem;
+    background-color: rgba(211, 211, 211, 0.26);
+}
+.wine-container {
+    margin-top: 1.5rem;
+    background-color: rgba(211, 211, 211, 0.26);
+    padding: 1rem 3rem;
+}
+.wine-item-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.wine-container h3 {
+    text-align: center;
+    margin-bottom: .4rem
+}
+.wine-container div {
+    margin-right: 1.8rem;
+    margin-bottom: .5rem;
+}
+
+.bottle-item {
+    width: 450px;
+    text-align: center;
+}
+.bottle-item div {
+    text-align: center;
+    margin-bottom: .5rem;
+    font-weight: 600
+}
+.wine-container h3 {
+    text-align: center;
+}
+.wine-item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.wine-item {
+  margin: 0 auto;
+  background-color: red;    
+}
+.add-bottle-title {
+    margin-bottom: -1px
+}
+#beer_type,
+#price {
+    height: 50px
+}
+#bottle-btn {
+    height: 21px;
+    width: 20px;
+    padding: 0
+}
