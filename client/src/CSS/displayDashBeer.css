@@ -139,7 +139,10 @@ p {
   }
 
   .remove-btn {
-    margin-top: 1%
+    display: block;
+    margin-top: 1%;
+    height: 40px;
+    margin: .5rem auto
   }
 
  @media (max-width:600px) {
@@ -154,9 +157,6 @@ p {
     }
     .bottom1 p {
       font-size: 90%;
-    }
-    .remove-btn {
-      width: 50%;
     }
     .beer-section1:last-child {
       margin-bottom : 10%;
@@ -179,9 +179,6 @@ p {
   
   .bottom1 p {
     font-size: 100%;
-  }
-  .remove-btn {
-    width: 38%;
   }
  }
 

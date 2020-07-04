@@ -13,20 +13,22 @@ if (localStorage.token) {
   setAuthToken(localStorage.token)
 }
 
-const Dashboard = () => {
+const Dashboard = (props) => {
 
   const authContext = useContext(AuthContext);
   const { logout } = authContext
   const beerContext = useContext(BeerContext);
   const { searchedBeers } = beerContext;
 
-
-
+  const Logout = () => {
+      logout();
+      props.history.push('/')
+  }
  
 
 return (
     <div className="dashboard1">
-      <button type="button" className="btn btn-warning logout" onClick={ logout }>Logout</button>   
+      <button type="button" className="btn btn-warning logout" onClick={Logout}>Logout</button>   
       <h1 className="dashboard-title">Beers on Tap</h1>
       <DisplayDash />
       <h1 className="dashboard-title">Beers on Bottles</h1>
