@@ -128,6 +128,7 @@ return (
         getMainBeers,
         searchBeer,
         addTap,
+        removeBeer,
         removeBottle,
         getMainBottles,
         addBottle

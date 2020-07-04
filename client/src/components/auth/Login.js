@@ -32,7 +32,7 @@ import BeerContext from '../context/beer/beerContext';
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // login(user)
+    login(user)
     props.history.push('/dashboard')
 }
 

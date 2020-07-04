@@ -26,7 +26,7 @@ function App() {
               <Route path='/' exact component={MainDisplay} />
               <Route path='/bottles' exact component={Bottles} />
               <Route path='/login' exact component={Login} />
-              <Route path='/dashboard' exact component={Dashboard} />
+              <PrivateRoute path='/dashboard' exact component={Dashboard} />
               <Route path='/register' exact component={Register} />
             </Switch>
           </Router>

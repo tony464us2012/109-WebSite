@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import BeerContext from '../../context/beer/beerContext';
 import SearchedBeerItem from './SearchedBeerItem';
 import BottleBeer from './BottleBeer';
@@ -8,7 +8,6 @@ import DisplayDash from './DisplayDash';
 import setAuthToken from '../../utils/setAuthToken';
 import AuthContext from '../../context/auth/authContext';
 import '../../../CSS/dashboard.css'
-import BottleItem from './BottleItem';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token)

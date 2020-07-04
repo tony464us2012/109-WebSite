@@ -14,12 +14,17 @@ const MainDisplay = props => {
         getMainBottles()
         //eslint-disable-next-line
     }, [])
+
+    const tap_btn = {
+        backgroundColor: 'orange',
+        fontWeight: '600'
+    }
     
     return (
      <Fragment>
         <div className="btn-container">
-            <button className="btn dashboard-btn btn-danger text-light">On Tap</button>
-            <button className="btn dashboard-btn"onClick={()=> { props.history.push('./bottles')}}>Bottles</button>
+            <button className="btn dashboard-btn text-light" style={tap_btn}>On Tap</button>
+            <button className="btn dashboard-btn" style={{fontWeight: '600'}} onClick={()=> { props.history.push('./bottles')}}>Bottles/Cans</button>
         </div>
         <div className='main-cont'>
                 {!displayBeers.length? <Spinner />: displayBeers.sort((a, b) => a.beerName > b.beerName ? 1 : -1).map((x) =>  <MainDisplayBeers 
@@ -36,7 +41,7 @@ const MainDisplay = props => {
                 logo2={x.beerLogo2}
                 />)}
         </div>
-        <button className="btn dashboard dashboard-btn" onClick={()=> { props.history.push('./login')}}>Dashboard <i className="fas fa-cog"></i></button>
+        <button className="btn dashboard-btn"  onClick={()=> { props.history.push('./login')}}>Dashboard</button>
     </Fragment>
     )}
 

@@ -5,9 +5,9 @@
 }
 .bottle-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 8px;
-    padding: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 5px;
+    padding: 1rem .5rem;
     background-color: rgba(211, 211, 211, 0.26);
 }
 .wine-container {
@@ -43,11 +43,10 @@
 }
 .wine-item-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 .wine-item {
   margin: 0 auto;
-  background-color: red;    
 }
 .add-bottle-title {
     margin-bottom: -1px
@@ -61,3 +60,69 @@
     width: 20px;
     padding: 0
 }
+
+@media (max-width: 768px) {
+    .bottle-container {
+        grid-template-columns: 1fr;
+    }
+    .bottle-item {
+        display: block;
+        margin: 0 auto;
+        /* background-color: rgb(109, 109, 109) */
+    }
+    .wine-container h3 {
+        margin-bottom: 1rem
+    }
+    .wine-item-container {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 1.5rem
+    }
+    
+    .wine-item {
+        display: block;
+        margin: 0 auto;
+    }
+    .wine-item div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .bottle-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 5px;
+            padding: .8rem 1rem
+    }
+    .bottle-item {
+        width: 90%;
+    }
+    .dashboard-btn {
+        width: 120px;
+        height: 40px;
+        margin-top: 1rem;
+        margin-bottom: 1rem
+    }
+    .wine-item-container {
+        grid-template-columns: 1fr;
+        padding-left: .8rem
+        }
+    .wine-item-container .wine-item:nth-child(2) {
+        margin-top: -.5rem
+    }
+    .wine-item {
+        width: 95%
+    }
+    .wine-item div {
+        text-align: center;
+    }
+}
+    @media (max-width: 320px) {
+        .wine-item-container {
+            padding-left: .4rem;
+            width: 100%
+            }
+        .wine-item {
+            width: 100%
+        }
+    }
