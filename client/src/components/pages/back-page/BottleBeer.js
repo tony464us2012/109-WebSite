@@ -33,6 +33,10 @@ const BottleBeer = () => {
               { bottleBeer.filter(x => x.type === 'Ale').sort((a, b) => a.name > b.name ? 1 : -1).map((beer, index) => <BottleItem name={beer.name} price={beer.price} key={index} id={beer._id} /> )}
             </div>
             <div className="bottle-item">
+                <h3>Ciders</h3>
+                { bottleBeer.filter(x => x.type === 'Cider').sort((a, b) => a.name > b.name ? 1 : -1).map((beer, index) => <BottleItem name={beer.name} price={beer.price} key={index} id={beer._id} /> )}
+            </div>
+            <div className="bottle-item">
                 <h3>Special</h3>
                 { bottleBeer.filter(x => x.type === 'Special').sort((a, b) => a.name > b.name ? 1 : -1).map((beer, index) => <BottleItem name={beer.name} price={beer.price} key={index} id={beer._id} /> )}
             </div>

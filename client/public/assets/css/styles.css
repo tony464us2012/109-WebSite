@@ -1,4 +1,6 @@
-
+.links li a, .icons li a {
+    color: #000 !important;
+}
 .section h1 {
     font-size: 2rem !important
 }
