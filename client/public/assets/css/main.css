@@ -2443,11 +2443,15 @@ input, select, textarea {
 			#navPanel .links li {
 				border-top: solid 2px #eeeeee;
 			}
+			#navPanel .icon {
+				color: #212931;
+			}
 
 				#navPanel .links li a {
 					border-bottom: 0;
 					display: block;
 					font-family: "Source Sans Pro", Helvetica, sans-serif;
+					color: #212931;
 					font-size: 0.9rem;
 					font-size: 0.9rem;
 					font-weight: 900;
