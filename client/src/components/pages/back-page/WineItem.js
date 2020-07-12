@@ -12,8 +12,7 @@ const WineItem = ( {name, price, id} ) => {
 
     return (
         <div>
-           {name} ${price} <button id="bottle-btn" className="btn btn-danger" onClick={ () => removebottle(id) } >x</button>
-        
+           {name} ${price}<a href="#!" style={{color:'red'}} onClick={ () => removebottle(id) } ><i className="material-icons">delete</i></a>
         </div>
     )
 }

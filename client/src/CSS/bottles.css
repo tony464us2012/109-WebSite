@@ -55,6 +55,10 @@
     width: 20px;
     padding: 0
 }
+.material-icons{
+    position: relative;
+    top: .4rem;
+}
 
 @media (max-width: 768px) {
     .bottle-container {
@@ -63,7 +67,6 @@
     .bottle-item {
         display: block;
         margin: 0 auto;
-        /* background-color: rgb(109, 109, 109) */
     }
     .wine-container h3 {
         margin-bottom: 1rem

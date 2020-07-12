@@ -8,7 +8,7 @@ import Bottles from './components/pages/main-page/Bottles'
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import PrivateRoute from './components/routes/PrivateRoute';
-import setAuthToken from './components/utils/setAuthToken'
+import setAuthToken from './components/utils/setAuthToken';
 import './CSS/App.css';
 import './CSS/displayDashBeer.css'
 
