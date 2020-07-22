@@ -1278,7 +1278,8 @@ Icon
 		}
 
 			#navPanel .links li {
-				border-top: solid 2px #eeeeee;
+				border-top: solid 2px #a07c7c;
+				display: block !important
 			}
 			#navPanel .icon {
 				color: #212931;

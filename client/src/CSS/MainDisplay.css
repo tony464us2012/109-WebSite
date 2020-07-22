@@ -66,10 +66,11 @@
 
 }
 .back {
-  padding: 1rem
+  padding: 1rem;
 }
 .main-description {
-  font-size: .9rem
+  font-size: .93rem;
+  text-align: center;
 }
 .dashboard {
     margin-left: 70%
