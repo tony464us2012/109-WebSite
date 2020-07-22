@@ -14,9 +14,9 @@ const Bottles = (props) => {
         fontWeight: '600'
     }
 
-
     return (
     <Fragment>
+        <h1 className="main-title"> Our Beers</h1>
         <div className="btn-container">
             <button className="btn dashboard-btn" style={{fontWeight: '600'}} onClick={()=> { props.history.push('./')}} >On Tap</button>
             <button className="btn dashboard-btn text-light" style={tap_btn}>Bottles</button>

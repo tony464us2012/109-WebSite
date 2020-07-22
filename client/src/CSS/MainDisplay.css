@@ -1,7 +1,11 @@
-@import url("https://fonts.google.com/?category=Handwriting&selection.family=Kaushan+Script");
 
+.main-title {
+  font-size: 2.8rem;
+  border: 4px solid black;
+  margin-top: 1rem;
+  text-align: center
+}
 .dashboard-btn {
-  height: 50px;
   font-weight: 650;
 }
 .main-cont {
@@ -10,107 +14,71 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 25px;
     margin-top: 2.5rem
-  }
-  .main-section{
+}
+.main-section{
     position: relative;
     padding: 1.5rem .5rem;
     background:  linear-gradient(90deg, rgba(229,235,242,1) 0%, rgba(255,255,255,1) 24%, rgba(250,250,250,1) 74%, rgba(229,235,242,1) 100%);
     box-shadow: 3px 3px 10px black ;
     border-radius: 2px;
     opacity: .93;
+    perspective: 800px;
 }
-
-  .logo-container {
+.logo-container {
       width: 40%;
       max-height: 50%;
       margin-left: 29%;
-  }
+}
 
-  .logo-container > img {
+.logo-container > img {
     height: 100%;
     width: 100%;
-  }
-
+}
 .details {
   text-align: left;
 }
-
-  .main-details h1 {
+.main-details h1 {
       color: black;
       font-size: 2em;
       margin-top: 10px;
       line-height: 85%;
       margin-left: auto
   }
-
-  .main-details h3 {
+.main-details h3 {
       margin-bottom: 6%;
       font-size: 1.3em;
-  }
-
-  .main-details p {
+}
+.main-details p {
       line-height: 85%;
       font-size: 1.1em;
       margin-top: -15px;
-  }
-
-  .main-bottom {
+}
+.main-bottom {
       display: flex;
       top: 2px;
       margin-top: 5px;
       font-weight: 800
-    }
-
-  .main-bottom p {
+}
+.main-bottom p {
       margin: 8px 0 0 0;
       border: 1px solid black;
       padding: 2px 6px;
 
-  }
-
-  .main-description {
-    margin-top: 6%;
-  }
-
-  .main-description-small {
-    height: 3em;
-    font-size: 1em;
-  }
-
-  .main-description p {
-    font-size: 1em;
-    overflow: hidden;
-  }
-
-  .btn-readmore {
-    margin-top: .5em;
-    padding: 1% 2%;
-  }
-
-
-  .dashboard {
+}
+.back {
+  padding: 1rem
+}
+.main-description {
+  font-size: .9rem
+}
+.dashboard {
     margin-left: 70%
-  }
-
-  .spinner-container {
-    width: 80vw;
-    margin-left:20%;
-    margin-top:20%;
-    display: block;
-    justify-content: center;
-  }
-
-  .spinner {
-    width: 25%;
-    margin-left: 30%
-
-  }
-
-  .dashboard-btn {
+}
+.dashboard-btn {
     margin-top: 2rem;
     margin-bottom: 2rem;
-  }
- .btn-container {
+}
+.btn-container {
    display: flex;
   justify-content: space-evenly;
  }
@@ -133,15 +101,13 @@
       margin-left: auto;
       font-size: .9em;
     }
-   
   }
  
 @media (max-width: 425px) {
-  
 .main-cont {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 35px;
   padding: 0 1rem
-}
+  }
 }

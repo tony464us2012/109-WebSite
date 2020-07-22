@@ -19,15 +19,20 @@ const MainDisplay = props => {
         backgroundColor: 'orange',
         fontWeight: '600'
     }
+
+    if(!displayBeers.length) {
+        return <Spinner />
+    }
     
     return (
      <Fragment>
+        <h1 className="main-title"> Our Beers</h1>
         <div className="btn-container">
             <button className="btn dashboard-btn text-light" style={tap_btn}>On Tap</button>
             <button className="btn dashboard-btn" style={{fontWeight: '600'}} onClick={()=> { props.history.push('./bottles')}}>Bottles/Cans</button>
         </div>
         <div className='main-cont'>
-                {!displayBeers.length? <Spinner />: displayBeers.sort((a, b) => a.beerName > b.beerName ? 1 : -1).map((x) =>  <MainDisplayBeers 
+                {displayBeers.sort((a, b) => a.beerName > b.beerName ? 1 : -1).map((x) =>  <MainDisplayBeers 
                 name={x.beerName} 
                 logo={x.beerLogo} 
                 abv={x.beerABV}

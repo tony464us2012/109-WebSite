@@ -30,7 +30,7 @@ const DisplayDashBeer = ({name, logo, abv, ibu, beerstyle, brewery, ratingCount,
                 <p>{ ratingCount } <br/>Rating Count</p>
                 <p>{ ratingScore.toPrecision(2) }/4 <br/>Rating Score</p>
             </div>
-            <button type="button" className="remove-btn btn btn-danger" onClick={()=> {removeBeer(id)}}>Remove</button>
+            <button type="button" className="remove-btn btn red" onClick={()=> {removeBeer(id)}}>Remove</button>
         </div>
         )
     }

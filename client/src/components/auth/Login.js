@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import '../../CSS/login.css';
 import AuthContext from '../context/auth/authContext';
-import BeerContext from '../context/beer/beerContext';
+import BeerContext from '../context/beer/beerContext'
 
 
   const Login = (props) => {
@@ -28,7 +27,7 @@ import BeerContext from '../context/beer/beerContext';
 
   const onChange = (e) => {
    setUser({...user, [e.target.name]: e.target.value})
-  }
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -36,35 +35,27 @@ import BeerContext from '../context/beer/beerContext';
     props.history.push('/dashboard')
 }
 
-
     return (
-       
-    
-  <div className="grid" style={{ backgroundColor: 'red'}}>
-    
-    <form  className="form login"  onSubmit={onSubmit}>
-    <header className="login__header">
-      <h3 style={{ color: 'black', fontSize: '2.5rem'}}>Login</h3>
-    </header>
-
-    <div className="login__body">
-
-    <div className="form__field">
-                    <label htmlFor="email">Email</label>
-                    <input className="fieldinput" type="email" name="email" value={email} onChange={onChange} />
-                </div>
-                <div className="form__field">
-                    <label htmlFor="password">Password</label>
-                    <input className="fieldinput" type= "password" name="password" value={password} onChange={onChange} />
-                </div>
-
-      <input id="input" type="submit" value="Login" />
-    </div>
-
+    <form style={formStyle} className='form' onSubmit={onSubmit}>
+      <h2>Login</h2>
+      <div className="row">
+          <div class="input-field col s8">
+            <input id="email" type="email" name="email" class="validate" placeholder="Email" value={email} onChange={onChange} />
+        </div>
+      </div>
+      <div className="row">
+          <div class="input-field col s8">
+            <input id="password" type="password" name="password" class="validate" placeholder="Password" value={password} onChange={onChange} />
+        </div>
+      </div>
+      <input id="input" className="btn waves-effect waves-light" type="submit" value="Login" />
   </form>
-</div>
+)};
 
-    )
+const formStyle = {
+    width: '75%',
+    height: '75%',
+    margin: '2rem auto'
 }
 
 export default Login

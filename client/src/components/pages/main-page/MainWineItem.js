@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const MainWineItem = ({ name, price }) => {
    
@@ -8,5 +8,6 @@ const MainWineItem = ({ name, price }) => {
            {name} ${price} 
         </div>
     )
-    }
+}
+
 export default MainWineItem
