@@ -1300,7 +1300,7 @@ Icon
 			}
 
 
-				#navPanel .links li a {
+				#navPanel nav .links li a {
 					border-bottom: 0;
 					display: block;
 					font-family: "Source Sans Pro", Helvetica, sans-serif;
