@@ -215,12 +215,11 @@ Icon
 			right: 0;
 			width: 100vw;
 			background-color: #212931;
-			background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../images/beer-tap2.jpg");
-			background-size: auto;
-			background-position: center, center -7%;
-			background-repeat: repeat, no-repeat;
-			background-attachment: scroll, scroll,	scroll;
+			background-image: linear-gradient(45deg, rgba(2,0,36,1) 10%, rgba(9,9,121,0.7) 60%, rgba(0,212,255,0.5250875350140056) 80%), url("../../images/beer-tap2.jpg");
+			background-size: auto, contain;
+			background-repeat: space;
 			z-index: -1;
+			scroll-behavior: smooth;
 		}
 
 			#wrapper > .bg.fixed {

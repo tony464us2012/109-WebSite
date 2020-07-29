@@ -67,11 +67,14 @@
 
 }
 .back {
+  display: grid;
+  place-items: center;
   padding: 1rem;
 }
 .main-description {
+  display: grid;
+  place-items: center;
   font-size: .93rem;
-  text-align: center;
 }
 .dashboard {
     margin-left: 70%
